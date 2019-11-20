@@ -6,19 +6,18 @@ import matplotlib.pyplot as plt
 def f(x,a):
     return a*x*(1-x)
 
-a_min = 3.582
-a_max = 3.585
-n_a = 2000
+
+n_a =  1 #7
 min_iter = 100
-n_iter = 1000000
+n_iter = 100000
 
 x_vec = np.zeros(n_iter - min_iter)
 y_vec = np.zeros(n_iter - min_iter)
-a_vec = np.array([3.9]) #np.linspace(a_min,a_max,n_a)
+a_vec = np.array([3.64]) # np.array([3.64,3.68,3.72,3.8,3.9,3.99,3.9999]) 
 
 ### Histogram Info ###
 n_bins = 100
-###
+######################
 
 for ii in range(n_a):
     y = 0.5
@@ -31,11 +30,10 @@ for ii in range(n_a):
         x_vec[jj] = a_vec[ii]
         y_vec[jj] = y
         
-    #plt.plot(x_vec,y_vec,'*')
-    plt.hist(y_vec,n_bins)
+    plt.hist(y_vec,np.linspace(0,1,n_bins+1),alpha = 0.5)
 
 # LABEL PLOT #################
 plt.title('Equation: $f(x,a) = ax(1-x)$')
-plt.xlabel('a value')
-plt.ylabel('$F^{200}(x,a)$')
+plt.xlabel('$F(x,a)$')
+plt.ylabel('Frequency')
 plt.show()
