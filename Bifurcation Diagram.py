@@ -7,8 +7,8 @@ import matplotlib.pyplot as plt
 def f(x,a):
     return a*x*(1-x)
 
-a_min = 3.63
-a_max = 3.65
+a_min = 3.582
+a_max = 3.585
 n_a = 2000
 min_iter = 100
 n_iter = 200
@@ -33,8 +33,8 @@ for ii in range(n_a):
 
 # LABEL PLOT #################
 plt.title('Equation: $f(x,a) = ax(1-x)$')
-plt.xlabel('a value with x = 0.5')
-plt.ylabel('$F(x,a)$')
+plt.xlabel('a value')
+plt.ylabel('$F^{200}(x,a)$')
 plt.show()
     
 
